@@ -7,18 +7,18 @@
 #include<stdio.h>
 main()
 {
-	int n,f=1,i;
-	printf("Enter number : ");
-	scanf("%d",&n);
+	int n=1,f=1,i;
 	
-	if(n<1)
+	while(1)
 	{
-		printf("Factorial of %d : %d",n,f);
-	}
-	else 
-	{
+		printf("\n\nEnter number(o/-ve number to exit) : ");
+		scanf("%d",&n);
+		if(n<1)
+			break;
 		for(i=2;i<=n;i++)
 			f*=i;
-		printf("Factorial of %d : %d",n,f);
+		printf("\t\t\t\tFactorial of %d : %d",n,f);
+		f=1;
 	}
+	printf("\nFactorial of %d : %d\n\t\tProgram Terminated",n,f);
 }
