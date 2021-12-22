@@ -8,11 +8,12 @@
 #include<stdlib.h>
 main()
 {
-	long long n;
-	int i,otp=0,cnt=0,num;
+	long long n,num;
+	int i,otp=0,cnt=0,value;
 	srand(time(0));
 	printf("Enter Mobile number : ");
 	scanf("%lld",&n);
+	num=n;
 	for(;n>0;n/=10)
 		cnt++;
 	if(cnt!=10)
@@ -27,9 +28,9 @@ main()
 	}
 	printf("\n(OTP is %d)",otp);
 	printf("\nEnter 5-digit OTP that is sent to your mobile : ");
-	scanf("%d",&num);
-	if(otp==num)
-		printf("Registration of your Mobile Successful.");
+	scanf("%d",&value);
+	if(otp==value)
+		printf("Registration of your Mobile no \"XXXXXX%lld\" Successful.",num%10000);
 	else
-		printf("Resgitration of your mobile through otp failed");
+		printf("Resgitration of your mobile no \"XXXXXX%lld\" through otp failed",num%10000);
 }
